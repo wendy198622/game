@@ -637,22 +637,3 @@ html {
       text-align:center;
       vertical-align:middle;
 }
-	
-	
-.slotwrapper {
-    overflow: hidden;
-    display: inline-block;
-    border: 1px solid #000;
-    height: 340px;
-}
-.slotwrapper ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    float: left;
-}
-.slotwrapper ul {
-    width: 170px;
-    height:170px;
-}
