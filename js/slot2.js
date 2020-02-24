@@ -47,7 +47,7 @@ function EZSlots(id, useroptions) {
         var chosen = shouldWin ? that.winningSet[whichReel] : Math.floor(Math.random() * symbolsToUse.length);
         for (var i = 0; i < that.howManySymbolsToAppend; i++) {
             var ctr = (i == that.endingLocation) ? chosen : Math.floor(Math.random() * symbolsToUse.length);
-            if (i == 7 && isInitialCall && that.startingSet) {
+            if (i == 1 && isInitialCall && that.startingSet) {
                 ctr = that.startingSet[whichReel];
                 var jqoContent = $("<div class='content'>" + symbolsToUse[ctr] + "</div>");
                 that.scaleJqo(jqoContent);
