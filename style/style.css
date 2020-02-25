@@ -87,7 +87,7 @@ html {
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
-    z-index: 0;
+    z-index: 2;
     margin: 0 auto;
 }
 
@@ -103,7 +103,6 @@ html {
     background-color: #fff;
     /* background-color: #fff; */
 }
-
 .game_outer .game_content .slot-list1 {
     margin-left: 15.5%;
 }
@@ -120,20 +119,8 @@ html {
     list-style: none;
 }
 
-.ezslots>.window {
-    /* overflow: visible; */
-}
-
-.game_outer .game_content .window {
-    margin-right: 2%;
-}
-
-.game_outer .game_content .window:nth-child(3) {
-    margin-right: 0;
-}
-
-.game_outer .game_content .window .content {
-    transform: translateY(20%);
+.game_outer .game_content .slot-list ul li{
+    transform: translateY(34%);
 }
 
 .game_outer .game_btn {
@@ -593,9 +580,13 @@ html {
         margin: 0 auto;
         padding: 3vw;
     }
+    .game_outer .game_content {
+        width: 77%;
+    }
     .rwd_outer img {
         display: block;
         width: 100%;
+        max-width: 100px;
         height: auto;
     }
     /* 各區外層設定 */
@@ -624,7 +615,7 @@ html {
         background-size: cover;
         padding: 2% 2%;
     }
-    .game_outer ul {
+    /* .game_outer ul {
         width: 100%;
         padding-bottom: 100%;
         position: relative;
@@ -658,7 +649,7 @@ html {
     }
     .game_outer ul li:nth-child(4):hover {
         background-image: url("../assets/start2.png");
-    }
+    } */
     /* 獎項彈跳視窗區設定 */
     .rwd_outer .prize_outer {
         position: fixed;
