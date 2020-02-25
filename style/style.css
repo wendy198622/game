@@ -121,6 +121,9 @@ html {
 
 .game_outer .game_content .slot-list ul li{
     transform: translateY(34%);
+    width: 21%;
+    height: 0;
+    padding-bottom: 21%;
 }
 
 .game_outer .game_btn {
@@ -586,7 +589,7 @@ html {
     .rwd_outer img {
         display: block;
         width: 100%;
-        max-width: 100px;
+        /* max-width: 100px; */
         height: auto;
     }
     /* 各區外層設定 */
