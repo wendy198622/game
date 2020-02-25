@@ -29,7 +29,7 @@ function SlotMachine(element, pOption) {
     };
 
     function setGame() {
-        _gameObj.rigtAnsArr = ['111', '222', '333', '444', '555', '666', '777', '888'];
+        _gameObj.rigtAnsArr = ['111', '222', '333', '444', '555', '666', '777', '888', '999'];
         for (var firstNum = 1; firstNum <= 3; firstNum++) {
             var firstStr = firstNum.toString();
             for (var secondNum = 1; secondNum <= 3; secondNum++) {
@@ -73,12 +73,18 @@ function SlotMachine(element, pOption) {
                 _options.callback();
             }
             //_options.callback();
-            console.log("moveEnd");
+            // console.log("moveEnd");
         }
     }
 
     function isFun(pObj) {
         return (pObj && typeof pObj === "function")
+    };
+
+
+    this.start = function(stoppostion = 0) {
+        this.startAction()
+        this.stopAction(stoppostion)
     };
 
     //public
@@ -222,7 +228,6 @@ function SlotMachine(element, pOption) {
                 _options.moveType = "start";
 
             });
-
         };
 
         this.stopAction = function(pNum) {

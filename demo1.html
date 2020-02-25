@@ -36,14 +36,12 @@
 
             _slotMachine = new SlotMachine($('.game_content .s-l ul'), {
                 callback: function() {
-
                     console.log("Game End");
                 }
             });
 
             $(".game_btn").click(function() {
-                _slotMachine.startAction()
-                _slotMachine.stopAction(1)
+                _slotMachine.start(7)
             })
 
             $(".game_btn").mousedown(function() {
