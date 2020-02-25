@@ -113,7 +113,7 @@ function SlotMachine(element, pOption) {
     function SlotMachineBar(element, pOptions) {
         var _options = {
                 moveType: "",
-                maxSpeed: 32,
+                maxSpeed: 36,
                 nowSpeed: 1,
                 delaySpeed: 0,
                 totalMove: 0,
@@ -135,6 +135,8 @@ function SlotMachine(element, pOption) {
             _options.list.css('position', 'absolute');
             _options.minY = -parseInt(_options.list.length / 2) * _options.disH;
             _options.maxY = _options.minY + _options.disH * _options.list.length;
+            _options.maxSpeed = _options.maxSpeed * (_options.disH / 170)
+            // console.log("_options.maxSpeed:" + _options.maxSpeed)
             //var rndStr = parseInt(Math.random() * _options.list.length);
             for (var setNum = 0; setNum < _options.list.length; setNum++) {
                 rndArr.push(setNum);
@@ -166,7 +168,7 @@ function SlotMachine(element, pOption) {
             pEle.css(cssObj);
 
         };
-
+        var i = 0
         //public
         this.update = function() {
             if (_options.moveType != "") {
@@ -187,9 +189,11 @@ function SlotMachine(element, pOption) {
                         _options.totalMove += _options.nowSpeed;
 
                     };
+                    
                 } else if (_options.moveType == "moveEnd") {
                     var checkObj = $.data(_options.nowEle[0]);
                     var disNum = checkObj.top;
+                    
                     if (disNum > 0) {
                         disNum = _options.minY - (_options.maxY - disNum);
                     };
@@ -244,6 +248,7 @@ function SlotMachine(element, pOption) {
             TweenMax.delayedCall(_options.moveTimerNum + _options.index * 1, function() {
                 _options.moveType = "moveEnd";
             });
+            
             // TweenMax.delayedCall(0.1, function() {
             //     _options.moveType = "moveEnd";
             // });
