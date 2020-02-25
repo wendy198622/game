@@ -13,23 +13,12 @@
     <meta property="og:image" content="//91app-game.com/content/games/03/assets/fb_share.jpg" />
 
     <link rel="stylesheet" href="style/style.css?V001">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js?V003"></script> -->
-    <script src="js/lib/jquery-1.9.1.min.js"></script>
-    <script src="js/lib/jquery.easing.js"></script>
-    <script type="text/javascript" src="js/jquery.cookie.js?V001"></script>
-    <script type="text/javascript" src="js/moment.js?V001"></script>
-    <script type="text/javascript" src="js/TweenMax.min.js"></script>
-    <script type="text/javascript" src="js/SlotMachine.js"></script>
-    <script src="js/lib/TweenMax.min.js"></script>
-    <script src="js/lib/jquery.automove-1.2.min.js"></script>
-    <script src="js/lib/jquery.pictureani-1.0.js"></script>
-    <script src="js/lib/jquery.mousewheel.js"></script>
-    <script src="js/lib/easeljs-0.8.0.min.js"></script>
-    <script src="js/lib/tweenjs-0.6.0.min.js"></script>
-    <script src="js/lib/movieclip-0.8.0.min.js"></script>
-    <script src="js/lib/preloadjs-0.6.0.min.js"></script>
-    <script src="js/lib/jquery.rollbar.min.js"></script>
-    <script src="js/lib/fastclick.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js?V003"></script>
+    <script src="js/jquery.easing.js"></script>
+    <script src="js/jquery.cookie.js?V001"></script>
+    <script src="js/moment.js?V001"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/SlotMachine.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33795333-1"></script>
@@ -46,18 +35,21 @@
             TweenMax.ticker.fps(15);
 
             _slotMachine = new SlotMachine($('.game_content .s-l ul'), {
-                callback: function() {}
+                callback: function() {
+
+                    console.log("Game End");
+                }
             });
 
-            $("body > div > div.game_outer > div.game_btn").click(function() {
+            $(".game_btn").click(function() {
+                _slotMachine.startAction()
                 _slotMachine.stopAction(1)
             })
 
-            $("body > div > div.game_outer > div.game_btn").mousedown(function() {
+            $(".game_btn").mousedown(function() {
                 $(".btn_img").attr('src', 'assets/game_btn_start.png')
             });
-            $("body > div > div.game_outer > div.game_btn").mouseup(function() {
-
+            $(".game_btn").mouseup(function() {
                 $(".btn_img").attr('src', 'assets/game_btn.png')
             });
 

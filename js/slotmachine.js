@@ -92,7 +92,6 @@ function SlotMachine(element, pOption) {
     };
 
     this.stopAction = function(pNum) {
-        console.log(pNum);
         delete _gameObj.barAnsArr;
         if (pNum <= 0) {
             _gameObj.barAnsArr = _gameObj.wrongAnsArr[parseInt(Math.random() * _gameObj.wrongAnsArr.length)];
@@ -228,7 +227,6 @@ function SlotMachine(element, pOption) {
 
         this.stopAction = function(pNum) {
             var eleName = '.gift' + pNum;
-            console.log(eleName);
             if (_options.nowEle) {
                 _options.nowEle = null;
             };
