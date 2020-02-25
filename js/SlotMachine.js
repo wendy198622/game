@@ -21,7 +21,7 @@ function SlotMachine(element, pOption) {
             _options.barArr.push(new SlotMachineBar($(this), {callback:slotMachineComplete}));
         });*/
         element.each(function(i) {
-            _options.barArr.push(new SlotMachineBar($(this), { callback: slotMachineComplete, index: i }));
+            _options.barArr.push(new SlotMachineBar($(this), { callback: slotMachineComplete, index: i, disH: _options.disH }));
         });
         setGame();
         TweenMax.ticker.fps(30);
@@ -121,7 +121,7 @@ function SlotMachine(element, pOption) {
                 maxMoveY: 0,
                 moveTimerNum: 3,
                 callback: false,
-                disH: 145,
+                disH: 168,
                 nowEle: false
             },
             _this = this;
